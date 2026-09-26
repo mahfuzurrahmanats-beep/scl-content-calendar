@@ -183,6 +183,9 @@
   .chip:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
   .chip:focus-visible{outline:2px solid var(--accent)}
   .chip b{display:block;font-family:var(--mono);font-size:10px;font-weight:600;opacity:.75;margin-bottom:1px}
+  /* The label is the post's own headline, so a long one is trimmed here and
+     shown in full when the post is opened. */
+  .chip .lb{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .chip.published{background:var(--live-wash);color:var(--live);border-color:var(--live)}
   .chip.scheduled{background:var(--sched-wash);color:var(--sched);border-color:var(--sched)}
   .chip.pending{background:var(--wait-wash);color:var(--wait);border-color:var(--wait)}
@@ -325,7 +328,7 @@
  {
   "date": "2026-08-20",
   "t": "Profile — How Section 179 Works.",
-  "short": "Profile · Section 179 basics",
+  "short": "Profile · How Section 179 Works",
   "n": "Your copy, word for word, with the tax-advisor line and the link to your Section 179 page.",
   "status": "published",
   "s179": true,
@@ -336,7 +339,7 @@
  {
   "date": "2026-08-21",
   "t": "Company page — How Section 179 Works.",
-  "short": "Page · Section 179 basics",
+  "short": "Page · How Section 179 Works",
   "n": "Same post on the SCL company page.",
   "status": "published",
   "s179": true,
@@ -347,7 +350,7 @@
  {
   "date": "2026-08-27",
   "t": "Profile — A simple rule of thumb:",
-  "short": "Profile · $100k rule of thumb",
+  "short": "Profile · A simple rule of thumb",
   "n": "About $2,000 a month over 60 months, with the \"every transaction is different\" caveat in full.",
   "status": "published",
   "s179": false,
@@ -358,7 +361,7 @@
  {
   "date": "2026-08-29",
   "t": "Company page — A simple rule of thumb:",
-  "short": "Page · $100k rule of thumb",
+  "short": "Page · A simple rule of thumb",
   "n": "Same post on the SCL company page.",
   "status": "published",
   "s179": false,
@@ -369,7 +372,7 @@
  {
   "date": "2026-09-12",
   "t": "Profile — Equipment financing can help drive equipment sales.",
-  "short": "Profile · Refer a customer",
+  "short": "Profile · Equipment financing can help drive equipment sales",
   "n": "For businesses that sell equipment. Links to your Refer a Customer page, with your contact details.",
   "status": "published",
   "s179": false,
@@ -380,7 +383,7 @@
  {
   "date": "2026-09-12",
   "t": "Company page — Equipment financing can help drive equipment sales.",
-  "short": "Page · Refer a customer",
+  "short": "Page · Equipment financing can help drive equipment sales",
   "n": "Same post on the SCL company page.",
   "status": "published",
   "s179": false,
@@ -391,7 +394,7 @@
  {
   "date": "2026-09-16",
   "t": "Profile — PUT EQUIPMENT TO WORK BEFORE YEAR-END.",
-  "short": "Profile · Hello September",
+  "short": "Profile · PUT EQUIPMENT TO WORK BEFORE YEAR-END",
   "n": "Headline \"Put equipment to work before year-end\", with the Section 179 link and your contact details.",
   "status": "published",
   "s179": true,
@@ -402,7 +405,7 @@
  {
   "date": "2026-09-18",
   "t": "Company page — PUT EQUIPMENT TO WORK BEFORE YEAR-END.",
-  "short": "Page · Hello September",
+  "short": "Page · PUT EQUIPMENT TO WORK BEFORE YEAR-END",
   "n": "Same post on the SCL company page.",
   "status": "published",
   "s179": true,
@@ -413,7 +416,7 @@
  {
   "date": "2026-09-21",
   "t": "Profile — 34 years in, and hearing from the clients we have helped is still my favorite part of the job.",
-  "short": "Profile · Client reviews video",
+  "short": "Profile · 34 years in, and hearing from the clients we have helped is still my favorite part of the job",
   "n": "\"34 years in, and hearing from the clients we have helped is still my favorite part of the job.\" Links to your reviews page.",
   "status": "published",
   "s179": false,
@@ -424,7 +427,7 @@
  {
   "date": "2026-09-22",
   "t": "Company page — 34 years in, and hearing from the clients we have helped is still my favorite part of the job.",
-  "short": "Page · Client reviews video",
+  "short": "Page · 34 years in, and hearing from the clients we have helped is still my favorite part of the job",
   "n": "Same video on the SCL company page.",
   "status": "published",
   "s179": false,
@@ -457,7 +460,7 @@
  {
   "date": "2026-09-30",
   "t": "Profile — Bank Financing vs. Equipment Financing.",
-  "short": "Profile · Bank vs equipment loan",
+  "short": "Profile · Bank Financing vs. Equipment Financing",
   "n": "What each is underwritten against, and why an equipment loan leaves your bank line open.",
   "status": "pending",
   "s179": true,
@@ -468,7 +471,7 @@
  {
   "date": "2026-10-01",
   "t": "Company page — Bank Financing vs. Equipment Financing.",
-  "short": "Page · Bank vs equipment loan",
+  "short": "Page · Bank Financing vs. Equipment Financing",
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
@@ -479,7 +482,7 @@
  {
   "date": "2026-10-12",
   "t": "Profile — A December purchase is not a partial deduction.",
-  "short": "Profile · December is not partial",
+  "short": "Profile · A December purchase is not a partial deduction",
   "n": "Section 179 is not prorated by month. The placed-in-service date decides it.",
   "status": "pending",
   "s179": true,
@@ -490,7 +493,7 @@
  {
   "date": "2026-10-13",
   "t": "Company page — A December purchase is not a partial deduction.",
-  "short": "Page · December is not partial",
+  "short": "Page · A December purchase is not a partial deduction",
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
@@ -501,7 +504,7 @@
  {
   "date": "2026-09-28",
   "t": "Profile — You do not have to pay cash to take the 179 deduction.",
-  "short": "Profile · Financing qualifies",
+  "short": "Profile · You do not have to pay cash to take the 179 deduction",
   "n": "Financing does not disqualify the purchase. How the transaction is structured does the deciding.",
   "status": "pending",
   "s179": true,
@@ -512,7 +515,7 @@
  {
   "date": "2026-09-29",
   "t": "Company page — You do not have to pay cash to take the 179 deduction.",
-  "short": "Page · Financing qualifies",
+  "short": "Page · You do not have to pay cash to take the 179 deduction",
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
@@ -523,7 +526,7 @@
  {
   "date": "2026-10-14",
   "t": "Profile — Determining the cost of qualifying equipment.",
-  "short": "Profile · Cost of equipment",
+  "short": "Profile · Determining the cost of qualifying equipment",
   "n": "Freight, delivery, installation and sales tax form part of the cost, not only the invoice price.",
   "status": "pending",
   "s179": true,
@@ -534,7 +537,7 @@
  {
   "date": "2026-10-15",
   "t": "Company page — Determining the cost of qualifying equipment.",
-  "short": "Page · Cost of equipment",
+  "short": "Page · Determining the cost of qualifying equipment",
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
@@ -545,7 +548,7 @@
  {
   "date": "2026-10-05",
   "t": "Profile — A slow year does not cost you the Section 179 deduction.",
-  "short": "Profile · A slow year",
+  "short": "Profile · A slow year does not cost you the Section 179 deduction",
   "n": "The deduction cannot exceed your taxable business income, and what is left over carries into a future year.",
   "status": "pending",
   "s179": true,
@@ -556,7 +559,7 @@
  {
   "date": "2026-10-06",
   "t": "Company page — A slow year does not cost you the Section 179 deduction.",
-  "short": "Page · A slow year",
+  "short": "Page · A slow year does not cost you the Section 179 deduction",
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
@@ -567,7 +570,7 @@
  {
   "date": "2026-10-07",
   "t": "Profile — Section 179 and bonus depreciation are not the same thing.",
-  "short": "Profile · 179 vs bonus depreciation",
+  "short": "Profile · Section 179 and bonus depreciation are not the same thing",
   "n": "Both write off equipment in the year it goes into service, but only Section 179 is capped by income and by a yearly dollar limit.",
   "status": "pending",
   "s179": true,
@@ -578,7 +581,7 @@
  {
   "date": "2026-10-08",
   "t": "Company page — Section 179 and bonus depreciation are not the same thing.",
-  "short": "Page · 179 vs bonus depreciation",
+  "short": "Page · Section 179 and bonus depreciation are not the same thing",
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
@@ -781,7 +784,8 @@
           var lbl=p.short||p.t.split(" ").slice(0,3).join(" ");
           var cch=channelOf(p);
           chips+='<a class="chip '+p.status+(cch==="page"?" ch-page":"")+'" href="#'+p.id+
-            '" title="'+esc(p.t)+" — "+LABEL[p.status]+'"><b>'+p.no+"</b>"+esc(lbl)+"</a>"; });
+            '" title="'+esc(p.t)+" — "+LABEL[p.status]+'"><b>'+p.no+'</b><span class="lb">'+
+            esc(lbl)+"</span></a>"; });
         g+='<div class="cell'+(wd>4?" wkend":"")+(day===today?" today":"")+'"><span class="d">'+d+"</span>"+chips+"</div>";
       }
       g+="</div>";
