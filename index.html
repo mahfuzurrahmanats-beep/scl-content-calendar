@@ -157,6 +157,9 @@
   .legend{margin-left:auto;display:flex;gap:14px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
   .legend span{display:inline-flex;align-items:center;gap:6px}
   .legend i{width:9px;height:9px;border-radius:50%}
+  .legend i.sw{width:16px;height:10px;border-radius:4px;border:1px solid var(--muted)}
+  .legend i.sw.fill{background:var(--muted)}
+  .legend i.sw.out{background:transparent;border-style:dashed}
 
   /* ---- Month ---- */
   .month{margin-top:30px;background:var(--surface);border:1px solid var(--rule);border-radius:18px;
@@ -183,6 +186,10 @@
   .chip.published{background:var(--live-wash);color:var(--live);border-color:var(--live)}
   .chip.scheduled{background:var(--sched-wash);color:var(--sched);border-color:var(--sched)}
   .chip.pending{background:var(--wait-wash);color:var(--wait);border-color:var(--wait)}
+  /* Colour says published/scheduled/pending; fill says which channel.
+     Her profile is filled in, the company page is outlined. */
+  .chip.ch-page{background:transparent;border:1px dashed currentColor;border-left:3px dashed currentColor}
+  .chip.ch-page b{opacity:.6}
 
   .list{border-top:1px solid var(--rule);padding:6px 22px 10px}
   .item{display:grid;grid-template-columns:52px 118px 1fr auto;gap:4px 16px;align-items:center;
@@ -245,6 +252,8 @@
     .chip{font-size:0;padding:0;height:6px;border-radius:3px;border-left:0}
     .chip b{display:none}
     .chip.published{background:var(--live)} .chip.scheduled{background:var(--sched)} .chip.pending{background:var(--wait)}
+    /* too small for an outline, so the company page bar reads as the lighter one */
+    .chip.ch-page{border:0;opacity:.45}
     .dow{font-size:9.5px;letter-spacing:.03em}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
@@ -758,7 +767,8 @@
       '</div><nav class="jump" aria-label="Months">'+months.map(function(mo){
         return '<a href="#m-'+mo.y+"-"+mo.m+'">'+MON[mo.m].slice(0,3)+"</a>";}).join("")+"</nav>"+
       '<div class="legend"><span><i style="background:var(--live)"></i>Published</span>'+
-      '<span><i style="background:var(--sched)"></i>Scheduled</span><span><i style="background:var(--wait)"></i>Pending</span></div></div>';
+      '<span><i style="background:var(--sched)"></i>Scheduled</span><span><i style="background:var(--wait)"></i>Pending</span>'+
+      '<span><i class="sw fill"></i>Profile</span><span><i class="sw out"></i>Company page</span></div></div>';
 
     months.forEach(function(mo){
       var lead=(new Date(mo.y,mo.m,1).getDay()+6)%7, days=new Date(mo.y,mo.m+1,0).getDate();
@@ -769,7 +779,9 @@
         var day=isoOf(mo.y,mo.m,d), wd=(lead+d-1)%7, chips="";
         inMonth.forEach(function(p){ if(p.date!==day) return;
           var lbl=p.short||p.t.split(" ").slice(0,3).join(" ");
-          chips+='<a class="chip '+p.status+'" href="#'+p.id+'" title="'+esc(p.t)+" — "+LABEL[p.status]+'"><b>'+p.no+"</b>"+esc(lbl)+"</a>"; });
+          var cch=channelOf(p);
+          chips+='<a class="chip '+p.status+(cch==="page"?" ch-page":"")+'" href="#'+p.id+
+            '" title="'+esc(p.t)+" — "+LABEL[p.status]+'"><b>'+p.no+"</b>"+esc(lbl)+"</a>"; });
         g+='<div class="cell'+(wd>4?" wkend":"")+(day===today?" today":"")+'"><span class="d">'+d+"</span>"+chips+"</div>";
       }
       g+="</div>";
