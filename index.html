@@ -248,6 +248,42 @@
     .dow{font-size:9.5px;letter-spacing:.03em}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+  /* Rows that carry a draft open it */
+  .item.has-draft{cursor:pointer;border-radius:10px;transition:background .15s}
+  .item.has-draft:hover,.item.has-draft:focus-visible{background:var(--surface-2)}
+  .item.has-draft:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .item .open{display:inline-flex;align-items:center;gap:4px;margin-top:4px;
+    font-size:12.5px;font-weight:700;color:var(--accent-ink);white-space:nowrap}
+  .item .open svg{width:12px;height:12px}
+
+  /* Draft viewer */
+  .ovl{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;
+    padding:20px;background:rgba(23,18,29,.55);backdrop-filter:blur(3px)}
+  .ovl[hidden]{display:none!important}
+  .sheet{background:var(--surface);border:1px solid var(--rule);border-radius:18px;box-shadow:var(--shadow);
+    width:min(820px,100%);max-height:calc(100vh - 40px);display:flex;flex-direction:column;overflow:hidden}
+  .sheet .hd{display:flex;align-items:flex-start;gap:14px;padding:18px 20px 14px;border-bottom:1px solid var(--rule)}
+  .sheet .hd .meta{flex:1;min-width:0}
+  .sheet .hd .ch{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--accent-ink);background:var(--accent-wash);border-radius:999px;padding:2px 8px;margin-bottom:6px}
+  .sheet .hd h3{font-size:19px;line-height:1.3;margin:0 0 6px;font-weight:750}
+  .sheet .hd .when{font-size:13px;color:var(--muted)}
+  .sheet .x{flex:none;width:34px;height:34px;border-radius:10px;border:1px solid var(--rule);
+    background:var(--surface-2);color:var(--ink-2);font-size:17px;line-height:1;cursor:pointer}
+  .sheet .x:hover{background:var(--surface-3)}
+  .sheet .bd{padding:18px 20px 22px;overflow:auto;display:grid;gap:18px}
+  .sheet .tags{justify-content:flex-start}
+  .draft{white-space:pre-wrap;font-size:14.5px;line-height:1.62;color:var(--ink-2);
+    background:var(--surface-2);border:1px solid var(--rule);border-radius:14px;padding:16px 18px}
+  .draft a{color:var(--accent-ink)}
+  .shot{border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--surface-2)}
+  .shot img{display:block;width:100%;height:auto}
+  .cap{font-size:12.5px;color:var(--muted);margin-top:6px}
+  .nodraft{font-size:14px;color:var(--muted)}
+  @media (max-width:560px){
+    .ovl{padding:0}
+    .sheet{width:100%;max-height:100vh;border-radius:0;border:0}
+  }
 </style>
 </head>
 <body>
@@ -284,7 +320,9 @@
   "n": "Your copy, word for word, with the tax-advisor line and the link to your Section 179 page.",
   "status": "published",
   "s179": true,
-  "format": "Image"
+  "format": "Image",
+  "draft": "How Section 179 Works\n\nSection 179 of the U.S. tax code allows many businesses to deduct the full purchase price of qualifying new or used equipment in the year it is placed into service, rather than depreciating the cost over several years.\n\nThis can help reduce taxable income while allowing your business to invest in the equipment it needs to grow. Many businesses choose to finance their equipment and still may be eligible to take advantage of Section 179, preserving cash flow while potentially receiving valuable tax benefits.\n\nMore information on our site: https://sclequipmentfinance.com/section-179/\n\nAlways consult your tax advisor to determine how Section 179 applies to your specific business and tax situation.",
+  "img": ""
  },
  {
   "date": "2026-08-21",
@@ -293,7 +331,9 @@
   "n": "Same post on the SCL company page.",
   "status": "published",
   "s179": true,
-  "format": "Image"
+  "format": "Image",
+  "draft": "How Section 179 Works\n\nSection 179 of the U.S. tax code allows many businesses to deduct the full purchase price of qualifying new or used equipment in the year it is placed into service, rather than depreciating the cost over several years.\n\nThis can help reduce taxable income while allowing your business to invest in the equipment it needs to grow. Many businesses choose to finance their equipment and still may be eligible to take advantage of Section 179, preserving cash flow while potentially receiving valuable tax benefits.\n\nMore information on our site: https://sclequipmentfinance.com/section-179/\n\nAlways consult your tax advisor to determine how Section 179 applies to your specific business and tax situation.",
+  "img": ""
  },
  {
   "date": "2026-08-27",
@@ -302,43 +342,108 @@
   "n": "About $2,000 a month over 60 months, with the \"every transaction is different\" caveat in full.",
   "status": "published",
   "s179": false,
-  "format": "Image"
+  "format": "Image",
+  "draft": "A simple rule of thumb:\n\nEvery $100,000 in capital equipment can often be financed for approximately $2,000 per month over 60 months.\n\nFor many businesses, this means:\nKeep working capital available for day-to-day operations.\nAcquire equipment now instead of waiting.\nMatch equipment costs with the revenue it helps generate.\nPreserve existing bank lines of credit for other business needs.\n\nEvery transaction is different, and payments vary based on credit approval, rates, and financing terms. But looking at equipment as a monthly investment, not just a large purchase, can make growth more achievable.\n\nSince 1992, SCL Equipment Finance has helped businesses nationwide acquire the equipment they need to grow.\n\nWhat equipment is your company planning to purchase next?",
+  "img": ""
  },
  {
-  "date": "2026-08-28",
+  "date": "2026-08-29",
   "t": "Company page — A simple rule of thumb: financing $100,000 of equipment.",
   "short": "Page · $100k rule of thumb",
   "n": "Same post on the SCL company page.",
   "status": "published",
   "s179": false,
-  "format": "Image"
+  "format": "Image",
+  "draft": "A simple rule of thumb:\n\nEvery $100,000 in capital equipment can often be financed for approximately $2,000 per month over 60 months.\n\nFor many businesses, this means:\nKeep working capital available for day-to-day operations.\nAcquire equipment now instead of waiting.\nMatch equipment costs with the revenue it helps generate.\nPreserve existing bank lines of credit for other business needs.\n\nEvery transaction is different, and payments vary based on credit approval, rates, and financing terms. But looking at equipment as a monthly investment, not just a large purchase, can make growth more achievable.\n\nSince 1992, SCL Equipment Finance has helped businesses nationwide acquire the equipment they need to grow.\n\nWhat equipment is your company planning to purchase next?",
+  "img": ""
  },
  {
   "date": "2026-09-12",
-  "t": "Refer a Customer — equipment financing can help drive equipment sales.",
-  "short": "Refer a customer",
-  "n": "For businesses that sell equipment. Links to your Refer a Customer page.",
+  "t": "Profile — Refer a Customer: equipment financing can help drive equipment sales.",
+  "short": "Profile · Refer a customer",
+  "n": "For businesses that sell equipment. Links to your Refer a Customer page, with your contact details.",
   "status": "published",
   "s179": false,
-  "format": ""
+  "format": "Image",
+  "draft": "Equipment financing can help drive equipment sales.\n\nIf your business sells equipment, a financing option keeps deals moving when a customer hesitates at the price. Refer that customer to SCL Equipment Finance and we handle the rest - credit review, approval, documentation - while you stay informed through every step, from terms to funding.\n\nYou stay focused on selling. We work directly with your customer to get the financing done.\n\nHow to refer a customer:\nhttps://sclequipmentfinance.com/refer-a-customer/\n\nHave a customer weighing an equipment purchase right now? Send us an introduction - an email or a CC is all it takes.",
+  "img": ""
+ },
+ {
+  "date": "2026-09-12",
+  "t": "Company page — Refer a Customer: equipment financing can help drive equipment sales.",
+  "short": "Page · Refer a customer",
+  "n": "Same post on the SCL company page.",
+  "status": "published",
+  "s179": false,
+  "format": "Image",
+  "draft": "Equipment financing can help drive equipment sales.\n\nIf your business sells equipment, a financing option keeps deals moving when a customer hesitates at the price. Refer that customer to SCL Equipment Finance and we handle the rest - credit review, approval, documentation - while you stay informed through every step, from terms to funding.\n\nYou stay focused on selling. We work directly with your customer to get the financing done.\n\nHow to refer a customer:\nhttps://sclequipmentfinance.com/refer-a-customer/\n\nHave a customer weighing an equipment purchase right now? Send us an introduction - an email or a CC is all it takes.",
+  "img": ""
  },
  {
   "date": "2026-09-16",
   "t": "Profile — Hello September.",
   "short": "Profile · Hello September",
-  "n": "Version A, on your personal profile.",
+  "n": "Headline \"Put equipment to work before year-end\", with the Section 179 link and your contact details.",
   "status": "published",
   "s179": true,
-  "format": "Promotional"
+  "format": "Promotional",
+  "draft": "PUT EQUIPMENT TO WORK BEFORE YEAR-END\n\nGet the equipment you need now and start payments in the new year.\n\n• Preserve cash flow\n• Get equipment in service before year-end\n• Take advantage of potential Section 179 tax benefits\n\nEst. 1992 | Providing Nationwide Equipment Financing\n\nAlways consult your tax advisor to determine how Section 179 applies to your specific business and tax situation.\n\nMore information on our site https://sclequipmentfinance.com/section-179/\n\nFor more details -\nBarbara Griffith\n714-573-9804 x101\nbgriffith@sclfinance.com",
+  "img": ""
  },
  {
-  "date": "2026-09-17",
+  "date": "2026-09-18",
   "t": "Company page — Hello September.",
   "short": "Page · Hello September",
-  "n": "Version B, on the SCL company page.",
-  "status": "scheduled",
+  "n": "Same post on the SCL company page.",
+  "status": "published",
   "s179": true,
-  "format": "Promotional"
+  "format": "Promotional",
+  "draft": "PUT EQUIPMENT TO WORK BEFORE YEAR-END\n\nGet the equipment you need now and start payments in the new year.\n\n• Preserve cash flow\n• Get equipment in service before year-end\n• Take advantage of potential Section 179 tax benefits\n\nEst. 1992 | Providing Nationwide Equipment Financing\n\nAlways consult your tax advisor to determine how Section 179 applies to your specific business and tax situation.\n\nMore information on our site https://sclequipmentfinance.com/section-179/\n\nFor more details -\nBarbara Griffith\n714-573-9804 x101\nbgriffith@sclfinance.com",
+  "img": ""
+ },
+ {
+  "date": "2026-09-21",
+  "t": "Profile — Client reviews video.",
+  "short": "Profile · Client reviews video",
+  "n": "\"34 years in, and hearing from the clients we have helped is still my favorite part of the job.\" Links to your reviews page.",
+  "status": "published",
+  "s179": false,
+  "format": "Video",
+  "draft": "34 years in, and hearing from the clients we have helped is still my favorite part of the job.\n\nThank you for trusting SCL Equipment Finance.\n\nAll of our reviews: sclequipmentfinance.com/reviews\n\n#EquipmentFinance #ClientReviews",
+  "img": ""
+ },
+ {
+  "date": "2026-09-22",
+  "t": "Company page — Client reviews video.",
+  "short": "Page · Client reviews video",
+  "n": "Same video on the SCL company page.",
+  "status": "published",
+  "s179": false,
+  "format": "Video",
+  "draft": "34 years in, and hearing from the clients we have helped is still my favorite part of the job.\n\nThank you for trusting SCL Equipment Finance.\n\nAll of our reviews: sclequipmentfinance.com/reviews\n\n#EquipmentFinance #ClientReviews",
+  "img": ""
+ },
+ {
+  "date": "2026-09-22",
+  "t": "Profile — Fed rates are up.",
+  "short": "Profile · Fed rates up",
+  "n": "Market update: interest rates increased 0.25%. The detail sits in the image.",
+  "status": "published",
+  "s179": false,
+  "format": "Image",
+  "draft": "",
+  "img": ""
+ },
+ {
+  "date": "2026-09-23",
+  "t": "Company page — Fed rates are up.",
+  "short": "Page · Fed rates up",
+  "n": "Same post on the SCL company page.",
+  "status": "published",
+  "s179": false,
+  "format": "Image",
+  "draft": "",
+  "img": ""
  },
  {
   "date": "2026-09-23",
@@ -347,7 +452,9 @@
   "n": "What each is underwritten against, and why an equipment loan leaves your bank line open.",
   "status": "pending",
   "s179": true,
-  "format": ""
+  "format": "",
+  "draft": "Bank Financing vs. Equipment Financing\n\nWhen you are buying equipment, what is the difference? Both can be good options, but they are built differently.\n\nBank financing looks at the business as a whole:\n• Credit and financial history\n• Time in business\n• Financial statements, usually required\n• Set lending guidelines\n• Often a lien on all business assets, not just the equipment\n\nEquipment financing is built for buying equipment:\n• More flexible credit programs\n• Access to several funding sources\n• Payments to the vendor while your equipment is being built\n• Faster credit decisions\n\nThe key difference? A bank lends to the business as a whole. An equipment finance company reviews credit, also looks closely at the equipment itself, how the equipment will be used, and how the equipment will benefit the company.\n\nSCL Equipment Finance has specialized in equipment financing since 1992. Planning an equipment purchase? Let's talk.\n\nBarbara Griffith, President\n714-573-9804 x101\nbgriffith@sclfinance.com\nsclequipmentfinance.com",
+  "img": ""
  },
  {
   "date": "2026-09-24",
@@ -356,7 +463,9 @@
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
-  "format": ""
+  "format": "",
+  "draft": "Bank Financing vs. Equipment Financing\n\nWhen you are buying equipment, what is the difference? Both can be good options, but they are built differently.\n\nBank financing looks at the business as a whole:\n• Credit and financial history\n• Time in business\n• Financial statements, usually required\n• Set lending guidelines\n• Often a lien on all business assets, not just the equipment\n\nEquipment financing is built for buying equipment:\n• More flexible credit programs\n• Access to several funding sources\n• Payments to the vendor while your equipment is being built\n• Faster credit decisions\n\nThe key difference? A bank lends to the business as a whole. An equipment finance company reviews credit, also looks closely at the equipment itself, how the equipment will be used, and how the equipment will benefit the company.\n\nSCL Equipment Finance has specialized in equipment financing since 1992. Planning an equipment purchase? Let's talk.\n\nBarbara Griffith, President\n714-573-9804 x101\nbgriffith@sclfinance.com\nsclequipmentfinance.com",
+  "img": ""
  },
  {
   "date": "2026-09-30",
@@ -365,7 +474,9 @@
   "n": "Section 179 is not prorated by month. The placed-in-service date decides it.",
   "status": "pending",
   "s179": true,
-  "format": "Image"
+  "format": "Image",
+  "draft": "A December purchase is not a partial deduction\n\nHere is something that surprises people about Section 179.\n\nOrdinary depreciation depends on when in the year an asset goes into service. Section 179 is not reduced based on the month you start using the equipment. Equipment placed in service in the last week of the tax year is treated the same as equipment placed in service in the first.\n\nSo a purchase completed late in the year is not a partial-year deduction. It can be the full amount, up to the Section 179 limit and your business income.\n\nThe date that decides it is the date the equipment is placed in service. Not the date of the order, and not the date on the invoice.\n\nAlways consult your tax advisor to determine how Section 179 applies to your specific business and tax situation.\nhttps://sclequipmentfinance.com/section-179/\n\nFor more details:\nBarbara Griffith\n714-573-9804 x101\nbgriffith@sclfinance.com",
+  "img": ""
  },
  {
   "date": "2026-10-01",
@@ -374,7 +485,9 @@
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
-  "format": "Image"
+  "format": "Image",
+  "draft": "A December purchase is not a partial deduction\n\nHere is something that surprises people about Section 179.\n\nOrdinary depreciation depends on when in the year an asset goes into service. Section 179 is not reduced based on the month you start using the equipment. Equipment placed in service in the last week of the tax year is treated the same as equipment placed in service in the first.\n\nSo a purchase completed late in the year is not a partial-year deduction. It can be the full amount, up to the Section 179 limit and your business income.\n\nThe date that decides it is the date the equipment is placed in service. Not the date of the order, and not the date on the invoice.\n\nAlways consult your tax advisor to determine how Section 179 applies to your specific business and tax situation.\nhttps://sclequipmentfinance.com/section-179/\n\nFor more details:\nBarbara Griffith\n714-573-9804 x101\nbgriffith@sclfinance.com",
+  "img": ""
  },
  {
   "date": "2026-10-07",
@@ -383,7 +496,9 @@
   "n": "Financing does not disqualify the purchase. How the transaction is structured does the deciding.",
   "status": "pending",
   "s179": true,
-  "format": ""
+  "format": "",
+  "draft": "You do not have to pay cash to take the 179 deduction\n\nThis is the part many buyers get wrong.\n\nSection 179 applies to qualifying equipment your business acquires and places in service that year. Equipment financing does not take away Section 179. Businesses that purchase and finance may be able to qualify for Section 179.\n\nAlways consult your tax advisor how Section 179 applies to your specific business.\nhttps://sclequipmentfinance.com/section-179/\n\nFor more details:\nBarbara Griffith\n714-573-9804 x101\nbgriffith@sclfinance.com",
+  "img": ""
  },
  {
   "date": "2026-10-08",
@@ -392,7 +507,9 @@
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
-  "format": ""
+  "format": "",
+  "draft": "You do not have to pay cash to take the 179 deduction\n\nThis is the part many buyers get wrong.\n\nSection 179 applies to qualifying equipment your business acquires and places in service that year. Equipment financing does not take away Section 179. Businesses that purchase and finance may be able to qualify for Section 179.\n\nAlways consult your tax advisor how Section 179 applies to your specific business.\nhttps://sclequipmentfinance.com/section-179/\n\nFor more details:\nBarbara Griffith\n714-573-9804 x101\nbgriffith@sclfinance.com",
+  "img": ""
  },
  {
   "date": "2026-10-14",
@@ -401,7 +518,9 @@
   "n": "Freight, delivery, installation and sales tax form part of the cost, not only the invoice price.",
   "status": "pending",
   "s179": true,
-  "format": ""
+  "format": "",
+  "draft": "Determining the cost of qualifying equipment\n\nWhen a business estimates a Section 179 deduction, the figure used is usually the purchase price shown on the equipment invoice. In practice, the amount capitalized for tax purposes is often higher.\n\nThe cost of an asset generally includes the expenditures required to bring it to the condition and location where it can be used for its intended purpose. For equipment, that commonly means freight, rigging and delivery, installation and setup, and applicable sales tax.\n\nThese are not treated as separate operating expenses. They form part of the capitalized cost of the asset, and therefore part of the amount to which Section 179 may be applied.\n\nWhere installation is a substantial undertaking, that difference can be significant. It is worth establishing the figure accurately before estimating the effect on your tax position.\n\nAlways consult your tax advisor to determine how Section 179 applies to your specific business and tax situation.\nhttps://sclequipmentfinance.com/section-179/",
+  "img": ""
  },
  {
   "date": "2026-10-15",
@@ -410,7 +529,9 @@
   "n": "Same post on the SCL company page.",
   "status": "pending",
   "s179": true,
-  "format": ""
+  "format": "",
+  "draft": "Determining the cost of qualifying equipment\n\nWhen a business estimates a Section 179 deduction, the figure used is usually the purchase price shown on the equipment invoice. In practice, the amount capitalized for tax purposes is often higher.\n\nThe cost of an asset generally includes the expenditures required to bring it to the condition and location where it can be used for its intended purpose. For equipment, that commonly means freight, rigging and delivery, installation and setup, and applicable sales tax.\n\nThese are not treated as separate operating expenses. They form part of the capitalized cost of the asset, and therefore part of the amount to which Section 179 may be applied.\n\nWhere installation is a substantial undertaking, that difference can be significant. It is worth establishing the figure accurately before estimating the effect on your tax position.\n\nAlways consult your tax advisor to determine how Section 179 applies to your specific business and tax situation.\nhttps://sclequipmentfinance.com/section-179/",
+  "img": ""
  }
 ];
   var SNAPSHOT_DATE = "26 September 2026";
@@ -457,6 +578,19 @@
   function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;")
     .replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 
+  /* Turn the plain links inside a draft into real links. Runs on escaped text. */
+  function linkify(escaped){
+    return escaped.replace(/https?:\/\/[^\s<]+[^\s<.,;:)\]]/g, function(u){
+      return '<a href="'+u+'" target="_blank" rel="noopener">'+u+"</a>";});
+  }
+
+  /* A Google Drive share link cannot be used as an image source; its thumbnail can. */
+  function imgSrc(u){
+    u=String(u||"").trim(); if(!u) return "";
+    var m=u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]{20,})/);
+    return m?"https://drive.google.com/thumbnail?id="+m[1]+"&sz=w1600":u;
+  }
+
   /* RFC-4180 CSV: quoted fields, doubled quotes, commas and newlines inside quotes. */
   function csv(text){
     var rows=[], row=[], f="", q=false, i=0, c;
@@ -498,14 +632,16 @@
     var head=rows[0].map(function(h){return h.trim().toLowerCase();});
     function col(){for(var i=0;i<arguments.length;i++){var k=head.indexOf(arguments[i]);if(k>-1)return k;}return -1;}
     var cD=col("date"), cT=col("title","post","topic"), cS=col("short label","short","label"),
-        cN=col("note","notes"), cSt=col("status"), c179=col("section 179","s179"), cF=col("format");
+        cN=col("note","notes"), cSt=col("status"), c179=col("section 179","s179"), cF=col("format"),
+        cDr=col("draft","post copy","copy","full post"), cIm=col("image","image url","image link");
     if(cD<0||cT<0) throw new Error("columns");
     return rows.slice(1).map(function(r){
       function g(c){return c<0?"":String(r[c]||"").trim();}
       var st=g(cSt).toLowerCase();
       return { date:toIso(g(cD)), t:g(cT), short:g(cS), n:g(cN),
                status: st.indexOf("publish")===0?"published":st.indexOf("sched")===0?"scheduled":"pending",
-               s179: /^(y|yes|true|1|✓)$/i.test(g(c179)), format:g(cF) };
+               s179: /^(y|yes|true|1|✓)$/i.test(g(c179)), format:g(cF),
+               draft:g(cDr), img:imgSrc(g(cIm)) };
     }).filter(function(p){return p.date&&p.t;});
   }
 
@@ -594,14 +730,19 @@
       }
       g+="</div>";
       var list=inMonth.map(function(p){
-        var sp=split(p.t), tags="";
+        var sp=split(p.t), tags="", has=!!(p.draft||p.img);
         if(p.s179) tags+='<span class="tag s179">Section 179</span>';
         if(p.format) tags+='<span class="tag">'+esc(p.format)+"</span>";
         tags+='<span class="tag '+p.status+'">'+LABEL[p.status]+"</span>";
-        return '<div class="item" id="'+p.id+'"><span class="no">'+p.no+"</span>"+
+        return '<div class="item'+(has?" has-draft":"")+'" id="'+p.id+'"'+
+          (has?' data-open="'+p.id+'" role="button" tabindex="0" aria-label="Open the full post for '+esc(sp.t)+'"':"")+
+          '><span class="no">'+p.no+"</span>"+
           '<span class="date"><b>'+pretty(p.date)+"</b><span>"+dowOf(p.date)+"</span></span>"+
           '<div class="body">'+(sp.ch?'<span class="ch">'+esc(sp.ch)+"</span>":"")+
-          '<div class="t">'+esc(sp.t)+"</div>"+(p.n?'<div class="n">'+esc(p.n)+"</div>":"")+"</div>"+
+          '<div class="t">'+esc(sp.t)+"</div>"+(p.n?'<div class="n">'+esc(p.n)+"</div>":"")+
+          (has?'<span class="open">View the full post'+
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">'+
+            '<path d="M9 5l7 7-7 7"/></svg></span>':"")+"</div>"+
           '<span class="tags">'+tags+"</span></div>";
       }).join("")||'<div class="empty">No posts on this channel this month.</div>';
       h+='<section class="month" id="m-'+mo.y+"-"+mo.m+'"><div class="month-head"><h2>'+MON[mo.m]+" <span>"+mo.y+"</span></h2>"+
@@ -615,14 +756,68 @@
     app.innerHTML=h;
   }
 
+  /* ---- the draft viewer ---------------------------------------------- */
+  var ovl=document.createElement("div");
+  ovl.className="ovl"; ovl.hidden=true;
+  ovl.setAttribute("role","dialog"); ovl.setAttribute("aria-modal","true");
+  ovl.innerHTML='<div class="sheet"><div class="hd"><div class="meta"></div>'+
+    '<button type="button" class="x" aria-label="Close">✕</button></div><div class="bd"></div></div>';
+  document.body.appendChild(ovl);
+  var lastFocus=null;
+
+  function openDraft(p){
+    var sp=split(p.t), tags="";
+    if(p.s179) tags+='<span class="tag s179">Section 179</span>';
+    if(p.format) tags+='<span class="tag">'+esc(p.format)+"</span>";
+    tags+='<span class="tag '+p.status+'">'+LABEL[p.status]+"</span>";
+    ovl.querySelector(".meta").innerHTML=
+      (sp.ch?'<span class="ch">'+esc(sp.ch)+"</span>":"")+
+      "<h3>"+esc(sp.t)+"</h3>"+
+      '<div class="when">'+dowOf(p.date)+" "+pretty(p.date)+"</div>";
+    var body='<div class="tags">'+tags+"</div>";
+    body+=p.draft?'<div class="draft">'+linkify(esc(p.draft))+"</div>"
+                 :'<p class="nodraft">The wording for this post is not in the calendar yet.</p>';
+    if(p.img) body+='<div><div class="shot"><img src="'+esc(p.img)+'" alt="Image for this post" loading="lazy"'+
+      ' onerror="this.closest(&quot;.shot&quot;).remove()"></div>'+
+      '<div class="cap">The image that goes with this post.</div></div>';
+    ovl.querySelector(".bd").innerHTML=body;
+    ovl.querySelector(".bd").scrollTop=0;
+    lastFocus=document.activeElement;
+    ovl.hidden=false;
+    document.body.style.overflow="hidden";
+    ovl.querySelector(".x").focus();
+  }
+  function closeDraft(){
+    ovl.hidden=true; document.body.style.overflow="";
+    if(lastFocus&&lastFocus.focus) lastFocus.focus();
+  }
+  ovl.addEventListener("click", function(e){
+    if(e.target===ovl||e.target.closest(".x")) closeDraft();
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key==="Escape"&&!ovl.hidden) closeDraft();
+  });
+  function postById(id){
+    for(var i=0;i<state.posts.length;i++) if(state.posts[i].id===id) return state.posts[i];
+    return null;
+  }
+
   app.addEventListener("click", function(e){
     var b=e.target.closest("[data-filter]");
     if(b){ state.filter=b.getAttribute("data-filter");
       try{localStorage.setItem("scl-filter",state.filter);}catch(err){}
       render(); return; }
+    var d=e.target.closest("[data-open]");
+    if(d){ var p=postById(d.getAttribute("data-open")); if(p){ openDraft(p); return; } }
     var a=e.target.closest('a[href^="#post-"]');
     if(a){ var el=document.getElementById(a.getAttribute("href").slice(1));
       if(el){ el.classList.add("flash"); setTimeout(function(){el.classList.remove("flash");},1600); } }
+  });
+
+  app.addEventListener("keydown", function(e){
+    if(e.key!=="Enter"&&e.key!==" ") return;
+    var d=e.target.closest&&e.target.closest("[data-open]");
+    if(d){ e.preventDefault(); var p=postById(d.getAttribute("data-open")); if(p) openDraft(p); }
   });
 
   function show(posts, sync){ state.posts=posts; state.sync=sync; render(); }
